@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Оля Собака](https://up.htmlacademy.ru/react/3/user/129479).
-* Наставник: `Неизвестно`.
+* Наставник: [Любовь Ложкина](https://htmlacademy.ru/profile/id1348189).
 
 ---
 
