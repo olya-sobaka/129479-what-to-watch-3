@@ -4,13 +4,9 @@ import Main from "../main/main.js";
 
 const App = (props) => {
   // eslint-disable-next-line react/prop-types
-  const {title, genre, year} = props;
+  const {movie} = props;
 
-  return <Main
-    title={title}
-    genre={genre}
-    year={year}
-  />;
+  return <Main movie={ movie } />;
 };
 
 export default App;
