@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 const Main = (props) => {
   // eslint-disable-next-line react/prop-types
-  const {title} = props;
-  const {genre} = props;
-  const {year} = props;
+  const {title, genre, year} = props;
 
   return (
     <React.Fragment>
@@ -13,7 +10,7 @@ const Main = (props) => {
       <span className="movie-card__genre">{genre}</span>
       <span className="movie-card__year">{year}</span>
     </React.Fragment>
-  )
+  );
 
 };
 
