@@ -53,5 +53,14 @@ const Main = (props) => {
 
 };
 
+Main.propTypes = {
+  movieNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired
+  })
+};
+
 export default Main;
 

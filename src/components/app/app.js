@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from 'prop-types';
 import Main from "../main/main.js";
 
 const App = (props) => {
@@ -14,6 +14,15 @@ const App = (props) => {
       movieNames={movieNames}
     />
   );
+};
+
+App.propTypes = {
+  movieNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired
+  })
 };
 
 export default App;
