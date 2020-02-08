@@ -8,8 +8,13 @@ const movie = {
   year: 2014
 };
 
+const movieNames = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
+
 ReactDOM.render(
-    <App movie={ movie }/>,
+    <App
+      movie={movie}
+      movieNames={movieNames}
+    />,
     document.querySelector(`#root`)
 );
 
