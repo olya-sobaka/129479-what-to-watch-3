@@ -8,10 +8,13 @@ const App = (props) => {
   // const movie = props.movie; // niet destrucured
   // const {movie} = props; // destructured
 
+  const handleHeadingClick = () => {};
+
   return (
     <Main
       movie={movie}
       movieNames={movieNames}
+      onHeadingClick={handleHeadingClick()}
     />
   );
 };
