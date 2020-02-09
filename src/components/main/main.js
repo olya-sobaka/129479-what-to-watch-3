@@ -47,7 +47,6 @@ const Main = (props) => {
           </div>
         </section>
       </div>
-
     </React.Fragment>
   );
 
