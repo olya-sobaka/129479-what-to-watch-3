@@ -8,11 +8,11 @@ const movie = {
   year: 1989
 };
 
-const movieNames = [`My Neighbor Totoro`, `Spirited Away`];
+const movieTitles = [`My Neighbor Totoro`, `Spirited Away`];
 
 it(`App renders correctly`, () => {
   const tree = renderer.create(
-      <App movie={movie} movieNames={movieNames} />
+      <App movie={movie} movieTitles={movieTitles} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

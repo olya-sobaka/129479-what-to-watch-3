@@ -9,7 +9,7 @@ const movie = {
   year: 1989
 };
 
-const movieNames = [`My Neighbor Totoro`, `Spirited Away`];
+const movieTitles = [`My Neighbor Totoro`, `Spirited Away`];
 
 Enzyme.configure({
   adapter: new Adapter(),
@@ -21,7 +21,7 @@ it(`Movie heading should be pressed`, () => {
   const main = shallow(
       <Main
         movie={movie}
-        movieNames={movieNames}
+        movieTitles={movieTitles}
         onHeadingClick={onHeadingClick}
       />
   );
