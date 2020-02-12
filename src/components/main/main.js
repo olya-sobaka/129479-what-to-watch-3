@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import SmallMovieCard from "../small-movie-card/small-movie-card.js";
 
 const Main = (props) => {
 
@@ -23,32 +24,15 @@ const Main = (props) => {
       </section>
       <div className="page-content">
         <section className="catalog">
-          <div className="catalog__movies-list">
-            {movieTitles.map((movieTitle) => {
-              return (
-                <article key={movieTitle} className="small-movie-card catalog__movies-card">
-                  <div className="small-movie-card__image">
-                    <img
-                      src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                      alt={movieTitle}
-                      width="280"
-                      height="175"
-                    />
-                  </div>
-                  <h3 onClick={onHeadingClick} className="small-movie-card__title">
-                    <a className="small-movie-card__link" /* href="movie-page.html" */>
-                      {movieTitle}
-                    </a>
-                  </h3>
-                </article>
-              );
-            })}
-          </div>
+          <div className="catalog__movies-list"></div>
         </section>
       </div>
+      <SmallMovieCard
+        movieTitles={movieTitles}
+        onHeadingClick={onHeadingClick}
+      />
     </React.Fragment>
   );
-
 };
 
 Main.propTypes = {
