@@ -31,4 +31,9 @@ const SmallMovieCard = (props) => {
   );
 };
 
+SmallMovieCard.propTypes = {
+  movieTitles: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onHeadingClick: PropTypes.func
+};
+
 export default SmallMovieCard;
