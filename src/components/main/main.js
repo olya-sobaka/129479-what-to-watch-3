@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 const Main = (props) => {
 
-  const {movie, movieNames} = props;
-
+  const {movie, movieTitles, onHeadingClick} = props;
   return (
     <React.Fragment>
       <section className="movie-card">
@@ -25,20 +24,20 @@ const Main = (props) => {
       <div className="page-content">
         <section className="catalog">
           <div className="catalog__movies-list">
-            {movieNames.map((item) => {
+            {movieTitles.map((movieTitle) => {
               return (
-                <article key={item} className="small-movie-card catalog__movies-card">
+                <article key={movieTitle} className="small-movie-card catalog__movies-card">
                   <div className="small-movie-card__image">
                     <img
                       src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-                      alt={item}
+                      alt={movieTitle}
                       width="280"
                       height="175"
                     />
                   </div>
-                  <h3 className="small-movie-card__title">
-                    <a className="small-movie-card__link" href="movie-page.html">
-                      {item}
+                  <h3 onClick={onHeadingClick} className="small-movie-card__title">
+                    <a className="small-movie-card__link" /* href="movie-page.html" */>
+                      {movieTitle}
                     </a>
                   </h3>
                 </article>
@@ -47,19 +46,19 @@ const Main = (props) => {
           </div>
         </section>
       </div>
-
     </React.Fragment>
   );
 
 };
 
 Main.propTypes = {
-  movieNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+  movieTitles: PropTypes.arrayOf(PropTypes.string.isRequired),
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired
-  })
+  }),
+  onHeadingClick: PropTypes.func
 };
 
 export default Main;

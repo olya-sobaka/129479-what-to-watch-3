@@ -8,12 +8,12 @@ const movie = {
   year: 2014
 };
 
-const movieNames = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
+const movieTitles = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
 
 ReactDOM.render(
     <App
       movie={movie}
-      movieNames={movieNames}
+      movieTitles={movieTitles}
     />,
     document.querySelector(`#root`)
 );
