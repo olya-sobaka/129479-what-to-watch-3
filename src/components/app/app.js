@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Main from "../main/main.js";
 
 const App = (props) => {
-  const {movie, movieTitles} = props;
+  const {movie, films} = props;
   // const movie = props.movie; // niet destrucured
   // const {movie} = props; // destructured
 
@@ -12,7 +12,7 @@ const App = (props) => {
   return (
     <Main
       movie={movie}
-      movieTitles={movieTitles}
+      films={films}
       onHeadingClick={handleHeadingClick}
     />
   );
