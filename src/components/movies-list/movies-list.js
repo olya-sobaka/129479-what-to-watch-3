@@ -17,12 +17,12 @@ class MoviesList extends React.PureComponent {
     const activeCard = cardId;
 
     this.setState(
-        {activeCard: activeCard}
+        {activeCard}
     );
   }
 
   render() {
-    const { films, onHeadingClick } = this.props;
+    const {films, onHeadingClick} = this.props;
     return (
       <div className="catalog__movies-list">
         {films.map((film) => {
@@ -40,5 +40,18 @@ class MoviesList extends React.PureComponent {
     );
   }
 }
+
+MoviesList.propTypes = {
+
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        posterSrc: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+      })
+  ).isRequired,
+
+  onHeadingClick: PropTypes.func
+};
 
 export default MoviesList;

@@ -41,8 +41,16 @@ const SmallMovieCard = (props) => {
 };
 
 SmallMovieCard.propTypes = {
-  movieTitle: PropTypes.string.isRequired,
-  onHeadingClick: PropTypes.func
+
+  film: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    posterSrc: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  }).isRequired,
+
+  onHeadingClick: PropTypes.func,
+
+  onCardHover: PropTypes.func
 };
 
 export default SmallMovieCard;

@@ -36,12 +36,21 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  movieTitles: PropTypes.arrayOf(PropTypes.string.isRequired),
+
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        posterSrc: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+      })
+  ).isRequired,
+
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired
   }),
+
   onHeadingClick: PropTypes.func
 };
 
