@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SmallMovieCard from "../small-movie-card/small-movie-card.js";
+import MoviesList from "../movies-list/movies-list.js";
 
 const Main = (props) => {
 
-  const {movie, movieTitles, onHeadingClick} = props;
+  const {movie, films, onHeadingClick} = props;
   return (
     <React.Fragment>
       <section className="movie-card">
@@ -27,8 +27,8 @@ const Main = (props) => {
           <div className="catalog__movies-list"></div>
         </section>
       </div>
-      <SmallMovieCard
-        movieTitles={movieTitles}
+      <MoviesList
+        films={films}
         onHeadingClick={onHeadingClick}
       />
     </React.Fragment>
