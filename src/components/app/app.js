@@ -4,8 +4,6 @@ import Main from "../main/main.js";
 
 const App = (props) => {
   const {movie, films} = props;
-  // const movie = props.movie; // niet destrucured
-  // const {movie} = props; // destructured
 
   const handleHeadingClick = () => {};
 

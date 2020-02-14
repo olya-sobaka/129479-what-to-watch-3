@@ -9,11 +9,27 @@ const movie = {
   year: 1989
 };
 
-const movieTitles = [`My Neighbor Totoro`, `Spirited Away`];
+const movies = [
+  {
+    title: `Kiki's Delivery Service`,
+    posterSrc: `img/midnight-special.jpg`,
+    id: 36
+  },
+  {
+    title: `Kiki's Delivery Service`,
+    posterSrc: `img/midnight-special.jpg`,
+    id: 37
+  },
+  {
+    title: `Kiki's Delivery Service`,
+    posterSrc: `img/midnight-special.jpg`,
+    id: 38
+  }
+];
 
 it(`Main renders correctly`, () => {
   const tree = renderer.create(
-    <Main movie={movie} movieTitles={movieTitles} />
+    <Main movie={movie} films={movies} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

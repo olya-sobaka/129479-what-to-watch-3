@@ -1,12 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.js";
-
-const movie = {
-  title: `Kiki's Delivery Service`,
-  genre: `Drama/Fantasy`,
-  year: 1989
-};
+import MoviesList from "./movies-list.js";
 
 const movies = [
   {
@@ -26,9 +20,9 @@ const movies = [
   }
 ];
 
-it(`App renders correctly`, () => {
+it(`MoviesList renders correctly`, () => {
   const tree = renderer.create(
-      <App movie={movie} films={movies} />
+      <MoviesList films={movies} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

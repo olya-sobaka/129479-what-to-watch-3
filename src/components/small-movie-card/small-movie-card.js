@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const SmallMovieCard = (props) => {
 
   const {onHeadingClick, onCardHover, film} = props;
-
   const {title: filmTitle, posterSrc: filmPoster, id} = film;
 
   return (
