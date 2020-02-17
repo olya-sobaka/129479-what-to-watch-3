@@ -27,10 +27,12 @@ const Main = (props) => {
           <div className="catalog__movies-list"></div>
         </section>
       </div>
-      <MoviesList
-        films={films}
-        onHeadingClick={onHeadingClick}
-      />
+      <div className="catalog__movies-list">
+        <MoviesList
+          films={films}
+          onHeadingClick={onHeadingClick}
+        />
+      </div>
     </React.Fragment>
   );
 };
