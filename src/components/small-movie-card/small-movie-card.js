@@ -41,7 +41,9 @@ SmallMovieCard.propTypes = {
 
   onHeadingClick: PropTypes.func,
 
-  onCardHover: PropTypes.func
+  onCardHover: PropTypes.func,
+
+  activeCardId: PropTypes.object.isRequired
 };
 
 export default SmallMovieCard;
