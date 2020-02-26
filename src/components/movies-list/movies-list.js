@@ -24,7 +24,7 @@ class MoviesList extends React.PureComponent {
   render() {
     const {films, onHeadingClick} = this.props;
     return (
-      <React.Fragment>
+      <div className="catalog__movies-list">
         {films.map((film) => {
           return (
             <SmallMovieCard
@@ -32,10 +32,11 @@ class MoviesList extends React.PureComponent {
               key={film.id}
               onCardHover={this.handleCardHover}
               film={film}
+              activeCardId={this.state.activeCard}
             />
           );
         })}
-      </React.Fragment>
+      </div>
     );
   }
 }

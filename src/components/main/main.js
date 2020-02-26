@@ -5,6 +5,7 @@ import MoviesList from "../movies-list/movies-list.js";
 const Main = (props) => {
 
   const {movie, films, onHeadingClick} = props;
+
   return (
     <React.Fragment>
       <section className="movie-card">
