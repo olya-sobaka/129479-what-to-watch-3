@@ -6,6 +6,7 @@ import VideoPlayer from "../video-player/video-player.js";
 const SmallMovieCard = (props) => {
 
   const {onHeadingClick, onCardHover, film, activeCardId} = props;
+
   const {title: filmTitle, id, posterSrc: filmPoster} = film;
 
   return (
