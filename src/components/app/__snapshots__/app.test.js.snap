@@ -43,84 +43,88 @@ Array [
   <div
     className="catalog__movies-list"
   >
-    <article
-      className="small-movie-card catalog__movies-card"
-      onMouseEnter={[Function]}
-      onMouseOut={[Function]}
+    <div
+      className="catalog__movies-list"
     >
-      <div
-        className="small-movie-card__image"
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseOut={[Function]}
       >
-        <img
-          alt="Kiki's Delivery Service"
-          height="175"
-          src="img/midnight-special.jpg"
-          width="280"
-        />
-      </div>
-      <h3
-        className="small-movie-card__title"
-        onClick={[Function]}
-      >
-        <a
-          className="small-movie-card__link"
+        <div
+          className="small-movie-card__image"
         >
-          Kiki's Delivery Service
-        </a>
-      </h3>
-    </article>
-    <article
-      className="small-movie-card catalog__movies-card"
-      onMouseEnter={[Function]}
-      onMouseOut={[Function]}
-    >
-      <div
-        className="small-movie-card__image"
-      >
-        <img
-          alt="Kiki's Delivery Service"
-          height="175"
-          src="img/midnight-special.jpg"
-          width="280"
-        />
-      </div>
-      <h3
-        className="small-movie-card__title"
-        onClick={[Function]}
-      >
-        <a
-          className="small-movie-card__link"
+          <img
+            alt="Kiki's Delivery Service"
+            height="175"
+            src="img/midnight-special.jpg"
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+          onClick={[Function]}
         >
-          Kiki's Delivery Service
-        </a>
-      </h3>
-    </article>
-    <article
-      className="small-movie-card catalog__movies-card"
-      onMouseEnter={[Function]}
-      onMouseOut={[Function]}
-    >
-      <div
-        className="small-movie-card__image"
+          <a
+            className="small-movie-card__link"
+          >
+            Kiki's Delivery Service
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseOut={[Function]}
       >
-        <img
-          alt="Kiki's Delivery Service"
-          height="175"
-          src="img/midnight-special.jpg"
-          width="280"
-        />
-      </div>
-      <h3
-        className="small-movie-card__title"
-        onClick={[Function]}
-      >
-        <a
-          className="small-movie-card__link"
+        <div
+          className="small-movie-card__image"
         >
-          Kiki's Delivery Service
-        </a>
-      </h3>
-    </article>
+          <img
+            alt="Kiki's Delivery Service"
+            height="175"
+            src="img/midnight-special.jpg"
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+          onClick={[Function]}
+        >
+          <a
+            className="small-movie-card__link"
+          >
+            Kiki's Delivery Service
+          </a>
+        </h3>
+      </article>
+      <article
+        className="small-movie-card catalog__movies-card"
+        onMouseEnter={[Function]}
+        onMouseOut={[Function]}
+      >
+        <div
+          className="small-movie-card__image"
+        >
+          <img
+            alt="Kiki's Delivery Service"
+            height="175"
+            src="img/midnight-special.jpg"
+            width="280"
+          />
+        </div>
+        <h3
+          className="small-movie-card__title"
+          onClick={[Function]}
+        >
+          <a
+            className="small-movie-card__link"
+          >
+            Kiki's Delivery Service
+          </a>
+        </h3>
+      </article>
+    </div>
   </div>,
 ]
 `;

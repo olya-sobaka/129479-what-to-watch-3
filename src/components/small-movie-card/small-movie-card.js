@@ -44,7 +44,10 @@ SmallMovieCard.propTypes = {
 
   onCardHover: PropTypes.func,
 
-  activeCardId: PropTypes.object.isRequired
+  activeCardId: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object
+  ])
 };
 
 export default SmallMovieCard;
