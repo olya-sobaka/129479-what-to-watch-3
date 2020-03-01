@@ -25,14 +25,11 @@ const Main = (props) => {
       </section>
       <div className="page-content">
         <section className="catalog">
-          <div className="catalog__movies-list"></div>
+          <MoviesList
+            films={films}
+            onHeadingClick={onHeadingClick}
+          />
         </section>
-      </div>
-      <div className="catalog__movies-list">
-        <MoviesList
-          films={films}
-          onHeadingClick={onHeadingClick}
-        />
       </div>
     </React.Fragment>
   );

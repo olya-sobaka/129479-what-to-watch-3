@@ -29,6 +29,7 @@ class VideoPlayer extends React.PureComponent {
         ref={this._videoRef}
         width="280" // пока неточно
         height="175"
+        className="player__video"
         muted={true}
         poster={filmPoster}
       >
