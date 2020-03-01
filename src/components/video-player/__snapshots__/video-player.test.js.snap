@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPlayer renders correctly 1`] = `
+<video
+  className="player__video"
+  height="175"
+  muted={true}
+  poster="img/midnight-special.jpg"
+  width="280"
+>
+  <source
+    src="https://coverr.co/videos/norway-road-f0J1etTrcQ"
+    type="video/mp4"
+  />
+  <source
+    src="https://coverr.co/videos/morning-sunshine-Of9KYVXN1C"
+    type="video/webm"
+  />
+</video>
+`;

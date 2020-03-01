@@ -1,44 +1,27 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SmallMovieCard from "../small-movie-card/small-movie-card.js";
+import withActiveCard from "../../hocs/with-active-card/with-active-card.js";
 
-class MoviesList extends React.PureComponent {
+const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeCard: null
-    };
+const MoviesList = (props) => {
 
-    this.handleCardHover = this.handleCardHover.bind(this);
-  }
-
-  handleCardHover(cardId) {
-    const activeCard = cardId;
-
-    this.setState(
-        {activeCard}
-    );
-  }
-
-  render() {
-    const {films, onHeadingClick} = this.props;
-    return (
-      <React.Fragment>
-        {films.map((film) => {
-          return (
-            <SmallMovieCard
-              onHeadingClick={onHeadingClick}
-              key={film.id}
-              onCardHover={this.handleCardHover}
-              film={film}
-            />
-          );
-        })}
-      </React.Fragment>
-    );
-  }
-}
+  const {films, onHeadingClick} = props;
+  return (
+    <div className="catalog__movies-list">
+      {films.map((film) => {
+        return (
+          <SmallMovieCardWrapped
+            onHeadingClick={onHeadingClick}
+            key={film.id}
+            film={film}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 MoviesList.propTypes = {
 

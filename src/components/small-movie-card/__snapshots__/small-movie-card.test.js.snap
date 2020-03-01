@@ -1,6 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SmallMovieCard renders correctly 1`] = `
+exports[`renders VideoPlayer component when the card is active 1`] = `
+<article
+  className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseOut={[Function]}
+>
+  <div
+    className="small-movie-card__image"
+  >
+    <video
+      className="player__video"
+      height="175"
+      muted={true}
+      poster="img/midnight-special.jpg"
+      width="280"
+    >
+      <source
+        src="https://coverr.co/videos/norway-road-f0J1etTrcQ"
+        type="video/mp4"
+      />
+      <source
+        src="https://coverr.co/videos/morning-sunshine-Of9KYVXN1C"
+        type="video/webm"
+      />
+    </video>
+  </div>
+  <h3
+    className="small-movie-card__title"
+  >
+    <a
+      className="small-movie-card__link"
+    >
+      Kiki's Delivery Service
+    </a>
+  </h3>
+</article>
+`;
+
+exports[`renders an image when the card is not active 1`] = `
+<article
+  className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseOut={[Function]}
+>
+  <div
+    className="small-movie-card__image"
+  >
+    <img
+      alt="Kiki's Delivery Service"
+      height="175"
+      src="img/midnight-special.jpg"
+      width="280"
+    />
+  </div>
+  <h3
+    className="small-movie-card__title"
+  >
+    <a
+      className="small-movie-card__link"
+    >
+      Kiki's Delivery Service
+    </a>
+  </h3>
+</article>
+`;
+
+exports[`renders an image when the card is not active 2`] = `
+<article
+  className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseOut={[Function]}
+>
+  <div
+    className="small-movie-card__image"
+  >
+    <img
+      alt="Kiki's Delivery Service"
+      height="175"
+      src="img/midnight-special.jpg"
+      width="280"
+    />
+  </div>
+  <h3
+    className="small-movie-card__title"
+  >
+    <a
+      className="small-movie-card__link"
+    >
+      Kiki's Delivery Service
+    </a>
+  </h3>
+</article>
+`;
+
+exports[`renders correctly 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
   onMouseEnter={[Function]}

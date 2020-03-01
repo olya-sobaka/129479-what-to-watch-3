@@ -16,14 +16,14 @@ Enzyme.configure({
 it(`SmallMovieCard heading should be pressed`, () => {
   const onHeadingClick = jest.fn();
 
-  const main = shallow(
+  const smallMovieCard = shallow(
       <SmallMovieCard
         film={movie}
         onHeadingClick={onHeadingClick}
       />
   );
 
-  const movieHeading = main.find(`.small-movie-card__title`);
+  const movieHeading = smallMovieCard.find(`.small-movie-card__title`);
 
   movieHeading.props().onClick();
 
@@ -34,14 +34,14 @@ it(`SmallMovieCard heading should be pressed`, () => {
 it(`SmallMovieCard onMouseOver event should be triggered`, () => {
   const onCardHover = jest.fn();
 
-  const main = shallow(
+  const smallMovieCard = shallow(
       <SmallMovieCard
         film={movie}
         onCardHover={onCardHover}
       />
   );
 
-  const movieCard = main.find(`.small-movie-card`);
+  const movieCard = smallMovieCard.find(`.small-movie-card`);
 
   movieCard.props().onMouseEnter();
 
