@@ -10,6 +10,7 @@ exports[`renders VideoPlayer component when the card is active 1`] = `
     className="small-movie-card__image"
   >
     <video
+      className="player__video"
       height="175"
       muted={true}
       poster="img/midnight-special.jpg"

@@ -2,6 +2,7 @@
 
 exports[`VideoPlayer renders correctly 1`] = `
 <video
+  className="player__video"
   height="175"
   muted={true}
   poster="img/midnight-special.jpg"
