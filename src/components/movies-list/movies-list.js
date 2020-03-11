@@ -7,10 +7,14 @@ const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
 
 const MoviesList = (props) => {
 
-  const {films, onHeadingClick} = props;
+  const {films, onHeadingClick, genre} = props;
+
+  const filmsFiltered = films.filter((film) => film.genre === genre);
+  const filmsByGenre = genre == `all genres` ? films : filmsFiltered;
+
   return (
     <div className="catalog__movies-list">
-      {films.map((film) => {
+      {filmsByGenre.map((film) => {
         return (
           <SmallMovieCardWrapped
             onHeadingClick={onHeadingClick}
