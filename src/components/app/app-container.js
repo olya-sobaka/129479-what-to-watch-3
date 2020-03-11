@@ -1,20 +1,25 @@
 import {connect} from "react-redux";
 import App from "./app";
+import {ActionType} from "../../reducer";
 
 const mapStateToProps = (state) => {
 
   const {genre, films} = state;
 
-  const filmByGenre = films.filter((film) => film.genre === genre);
-  console.log('films', films);
-
   return {
     genre,
-    films: genre === `all` ? films : filmByGenre
+    films
   };
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onGenreClick: (newGenre) => dispatch({
+      type: ActionType.SET_ACTIVE_GENRE,
+      payload: {newGenre}
+    }),
+  };
+};
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
 
