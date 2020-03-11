@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Main from "../main/main.js";
 
 const App = (props) => {
-  const {movie, films} = props;
+  const {movie, films, genre, onGenreClick} = props;
 
   const handleHeadingClick = () => {};
 
@@ -11,7 +11,9 @@ const App = (props) => {
     <Main
       movie={movie}
       films={films}
+      genre={genre}
       onHeadingClick={handleHeadingClick}
+      onGenreClick={onGenreClick}
     />
   );
 };

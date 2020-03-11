@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MoviesList from "../movies-list/movies-list.js";
+import MoviesList from "../movies-list/movies-list";
+import GenresList from "../genres-list/genres-list";
 
 const Main = (props) => {
 
-  const {movie, films, onHeadingClick} = props;
+  const {movie, films, onHeadingClick, genre, onGenreClick} = props;
 
   return (
     <React.Fragment>
@@ -25,9 +26,16 @@ const Main = (props) => {
       </section>
       <div className="page-content">
         <section className="catalog">
+          <h2 className="catalog__title visually-hidden">Catalog</h2>
+          <GenresList
+            films={films}
+            activeGenre={genre}
+            onGenreClick={onGenreClick}
+          />
           <MoviesList
             films={films}
             onHeadingClick={onHeadingClick}
+            genre={genre}
           />
         </section>
       </div>

@@ -9,7 +9,7 @@ const films = [
     id: 1,
     previewMp4,
     previewWebm,
-    genre: 'documentary'
+    genre: `documentary`
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -17,7 +17,7 @@ const films = [
     id: 2,
     previewMp4,
     previewWebm,
-    genre: 'thrillers'
+    genre: `thrillers`
   },
   {
     title: `Macbeth`,
@@ -25,7 +25,7 @@ const films = [
     id: 3,
     previewMp4,
     previewWebm,
-    genre: 'comedies'
+    genre: `comedies`
   },
   {
     title: `Aviator`,
@@ -66,7 +66,7 @@ const films = [
     previewMp4,
     previewWebm,
     genre: `romance`
-  },
+  }
 ];
 
 export default films;
