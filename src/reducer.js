@@ -2,12 +2,12 @@ import {extend} from "./utils.js";
 import films from "./mocks/films";
 
 const initialState = {
-  genre: `all`,
+  genre: `all genres`,
   films
 };
 
-const ActionType = {
-  CHANGE_GENRE_FILTER: `CHANGE_GENRE_FILTER`,
+export const ActionType = {
+  SET_ACTIVE_GENRE: `SET_ACTIVE_GENRE`,
   GET_FILMS_BY_GENRE: `GET_FILMS_BY_GENRE`
 };
 
@@ -15,8 +15,8 @@ const ActionType = {
 export const reducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case ActionType.CHANGE_GENRE_FILTER:
-      return extend(state, {genre: action.payload.genre});
+    case ActionType.SET_ACTIVE_GENRE:
+      return extend(state, {genre: action.payload.newGenre});
   }
   return state;
 };
