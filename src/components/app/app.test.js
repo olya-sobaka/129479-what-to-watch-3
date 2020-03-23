@@ -12,23 +12,30 @@ const movies = [
   {
     title: `Kiki's Delivery Service`,
     posterSrc: `img/midnight-special.jpg`,
-    id: 36
+    id: 36,
+    genre: `documentary`
   },
   {
     title: `Kiki's Delivery Service`,
     posterSrc: `img/midnight-special.jpg`,
-    id: 37
+    id: 37,
+    genre: `horror`
   },
   {
     title: `Kiki's Delivery Service`,
     posterSrc: `img/midnight-special.jpg`,
-    id: 38
+    id: 38,
+    genre: `comedy`
   }
 ];
 
 it(`App renders correctly`, () => {
+
+  const genre = `drama`;
+  const onGenreClick = () => {};
+
   const tree = renderer.create(
-      <App movie={movie} films={movies} />
+      <App movie={movie} films={movies} genre={genre} onGenreClick={onGenreClick} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

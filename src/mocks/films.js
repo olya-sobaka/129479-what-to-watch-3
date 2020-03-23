@@ -8,57 +8,65 @@ const films = [
     posterSrc: poster,
     id: 1,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `documentary`
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
     posterSrc: poster,
     id: 2,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `thriller`
   },
   {
     title: `Macbeth`,
     posterSrc: poster,
     id: 3,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `comedy`
   },
   {
     title: `Aviator`,
     posterSrc: poster,
     id: 4,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `drama`
   },
   {
     title: `Pulp Fiction`,
     posterSrc: poster,
     id: 5,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `crime`
   },
   {
     title: `Moonrise Kingdom`,
     posterSrc: poster,
     id: 6,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `comedy`
   },
   {
     title: `Bohemian Rhapsody`,
     posterSrc: poster,
     id: 7,
     previewMp4,
-    previewWebm
+    previewWebm,
+    genre: `horror`
   },
   {
     title: `What We Do in the Shadows`,
     posterSrc: poster,
     id: 8,
     previewMp4,
-    previewWebm
-  },
+    previewWebm,
+    genre: `romance`
+  }
 ];
 
 export default films;
