@@ -17,7 +17,7 @@ const films = [
     id: 2,
     previewMp4,
     previewWebm,
-    genre: `thrillers`
+    genre: `thriller`
   },
   {
     title: `Macbeth`,
@@ -25,7 +25,7 @@ const films = [
     id: 3,
     previewMp4,
     previewWebm,
-    genre: `comedies`
+    genre: `comedy`
   },
   {
     title: `Aviator`,
@@ -33,7 +33,7 @@ const films = [
     id: 4,
     previewMp4,
     previewWebm,
-    genre: `dramas`
+    genre: `drama`
   },
   {
     title: `Pulp Fiction`,
@@ -49,7 +49,7 @@ const films = [
     id: 6,
     previewMp4,
     previewWebm,
-    genre: `comedies`
+    genre: `comedy`
   },
   {
     title: `Bohemian Rhapsody`,

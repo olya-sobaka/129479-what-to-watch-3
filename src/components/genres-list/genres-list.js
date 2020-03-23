@@ -5,6 +5,7 @@ import {capitalizeFirstLetter} from "../../utils";
 const GenresList = (props) => {
 
   const {films, activeGenre, onGenreClick} = props;
+
   const activeGenreClassNames = `catalog__genres-item catalog__genres-item--active`;
   const genreClassName = `catalog__genres-item`;
 
@@ -21,7 +22,10 @@ const GenresList = (props) => {
 
   return (
     <ul className="catalog__genres-list">
-      {distinctGenres.map((distinctGenre) => {
+      {distinctGenres.map((distinctGenre, index) => {
+        if (index > 8) {
+          return null;
+        }
         return (
           <li
             onClick={() => handleGenreClick(distinctGenre)}
@@ -33,6 +37,22 @@ const GenresList = (props) => {
       })}
     </ul>
   );
+};
+
+GenresList.propTypes = {
+
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        posterSrc: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        genre: PropTypes.string.isRequired
+      })
+  ).isRequired,
+
+  activeGenre: PropTypes.string.isRequired,
+
+  onGenreClick: PropTypes.func.isRequired
 };
 
 export default GenresList;

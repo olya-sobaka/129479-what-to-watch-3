@@ -59,7 +59,11 @@ Main.propTypes = {
     year: PropTypes.number.isRequired
   }),
 
-  onHeadingClick: PropTypes.func
+  onHeadingClick: PropTypes.func,
+
+  onGenreClick: PropTypes.func,
+
+  genre: PropTypes.string
 };
 
 export default Main;

@@ -1,14 +1,6 @@
-/* eslint-disable indent */
 import React from "react";
 import renderer from "react-test-renderer";
-import Main from "./main.js";
-import MoviesList from "../movies-list/movies-list";
-
-const movie = {
-  title: `Kiki's Delivery Service`,
-  genre: `Drama/Fantasy`,
-  year: 1989
-};
+import GenresList from "./genres-list";
 
 const movies = [
   {
@@ -31,19 +23,14 @@ const movies = [
   }
 ];
 
-it(`Main renders correctly`, () => {
+const handleGenreClick = () => {};
 
-  const genre = movies[0].genre;
-  const onHeadingClick = () => {};
-  const onGenreClick = () => {};
+it(`renders correctly`, () => {
+
+  const activeGenre = `horror`;
 
   const tree = renderer.create(
-    <Main movie={movie}
-          films={movies}
-          onHeadingClick={onHeadingClick}
-          genre={genre}
-          onGenreClick={onGenreClick}
-    />
+      <GenresList films={movies} activeGenre={activeGenre} onGenreClick={handleGenreClick} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
