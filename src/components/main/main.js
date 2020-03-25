@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import MoviesList from "../movies-list/movies-list";
 import GenresList from "../genres-list/genres-list";
+import MovieCard from "../movie-card/movie-card";
 
 const Main = (props) => {
 
@@ -9,21 +10,15 @@ const Main = (props) => {
 
   return (
     <React.Fragment>
-      <section className="movie-card">
-        <div className="movie-card__bg">
-          <div className="movie-card__desc">
-            <h2 className="movie-card__title">
-              {movie.title}
-            </h2>
-            <span className="movie-card__genre">
-              {movie.genre}
-            </span>
-            <span className="movie-card__year">
-              {movie.year}
-            </span>
-          </div>
-        </div>
-      </section>
+
+
+        <MovieCard
+          title={movie.title}
+          genre={movie.genre}
+          year={movie.year}
+        />
+
+
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
