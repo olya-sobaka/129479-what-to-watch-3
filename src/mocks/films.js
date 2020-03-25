@@ -9,7 +9,8 @@ const films = [
     id: 1,
     previewMp4,
     previewWebm,
-    genre: `documentary`
+    genre: `documentary`,
+    year: 2014
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
@@ -17,7 +18,8 @@ const films = [
     id: 2,
     previewMp4,
     previewWebm,
-    genre: `thriller`
+    genre: `thriller`,
+    year: 2015
   },
   {
     title: `Macbeth`,
@@ -25,7 +27,8 @@ const films = [
     id: 3,
     previewMp4,
     previewWebm,
-    genre: `comedy`
+    genre: `comedy`,
+    year: 2016
   },
   {
     title: `Aviator`,
@@ -33,7 +36,8 @@ const films = [
     id: 4,
     previewMp4,
     previewWebm,
-    genre: `drama`
+    genre: `drama`,
+    year: 2017
   },
   {
     title: `Pulp Fiction`,
@@ -41,7 +45,8 @@ const films = [
     id: 5,
     previewMp4,
     previewWebm,
-    genre: `crime`
+    genre: `crime`,
+    year: 2018
   },
   {
     title: `Moonrise Kingdom`,
@@ -49,7 +54,8 @@ const films = [
     id: 6,
     previewMp4,
     previewWebm,
-    genre: `comedy`
+    genre: `comedy`,
+    year: 2019
   },
   {
     title: `Bohemian Rhapsody`,
@@ -57,7 +63,8 @@ const films = [
     id: 7,
     previewMp4,
     previewWebm,
-    genre: `horror`
+    genre: `horror`,
+    year: 2020
   },
   {
     title: `What We Do in the Shadows`,
@@ -65,7 +72,8 @@ const films = [
     id: 8,
     previewMp4,
     previewWebm,
-    genre: `romance`
+    genre: `romance`,
+    year: 2014
   }
 ];
 
