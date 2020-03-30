@@ -5,7 +5,7 @@ const previewWebm = `https://upload.wikimedia.org/wikipedia/commons/transcoded/b
 const films = [
   {
     title: `Bohemian Rhapsody`,
-    posterSrc: poster,
+    poster,
     id: 1,
     previewMp4,
     previewWebm,
@@ -14,7 +14,7 @@ const films = [
   },
   {
     title: `Fantastic Beasts: The Crimes of Grindelwald`,
-    posterSrc: poster,
+    poster,
     id: 2,
     previewMp4,
     previewWebm,
@@ -23,7 +23,7 @@ const films = [
   },
   {
     title: `Macbeth`,
-    posterSrc: poster,
+    poster,
     id: 3,
     previewMp4,
     previewWebm,
@@ -32,7 +32,7 @@ const films = [
   },
   {
     title: `Aviator`,
-    posterSrc: poster,
+    poster,
     id: 4,
     previewMp4,
     previewWebm,
@@ -41,7 +41,7 @@ const films = [
   },
   {
     title: `Pulp Fiction`,
-    posterSrc: poster,
+    poster,
     id: 5,
     previewMp4,
     previewWebm,
@@ -50,7 +50,7 @@ const films = [
   },
   {
     title: `Moonrise Kingdom`,
-    posterSrc: poster,
+    poster,
     id: 6,
     previewMp4,
     previewWebm,
@@ -59,7 +59,7 @@ const films = [
   },
   {
     title: `Bohemian Rhapsody`,
-    posterSrc: poster,
+    poster,
     id: 7,
     previewMp4,
     previewWebm,
@@ -68,7 +68,7 @@ const films = [
   },
   {
     title: `What We Do in the Shadows`,
-    posterSrc: poster,
+    poster,
     id: 8,
     previewMp4,
     previewWebm,

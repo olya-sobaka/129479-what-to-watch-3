@@ -5,19 +5,19 @@ import GenresList from "./genres-list";
 const movies = [
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 36,
     genre: `horror`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 37,
     genre: `drama`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 38,
     genre: `documentary`
   }

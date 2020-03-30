@@ -11,19 +11,19 @@ const movie = {
 const movies = [
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 36,
     genre: `documentary`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 37,
     genre: `horror`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 38,
     genre: `comedy`
   }

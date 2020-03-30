@@ -5,7 +5,7 @@ import SmallMovieCard from "./small-movie-card.js";
 
 const movie = {
   title: `Kiki's Delivery Service`,
-  posterSrc: `img/midnight-special.jpg`,
+  poster: `img/midnight-special.jpg`,
   id: 36
 };
 
@@ -13,21 +13,18 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`SmallMovieCard heading should be pressed`, () => {
-  const onHeadingClick = jest.fn();
+it(`SmallMovieCard should be pressed`, () => {
+  const onCardClick = jest.fn();
 
   const smallMovieCard = shallow(
-      <SmallMovieCard
-        film={movie}
-        onHeadingClick={onHeadingClick}
-      />
+      <SmallMovieCard film={movie} onCardClick={onCardClick}/>
   );
 
-  const movieHeading = smallMovieCard.find(`.small-movie-card__title`);
+  const movieHeading = smallMovieCard.find(`.small-movie-card`);
 
   movieHeading.props().onClick();
 
-  expect(onHeadingClick.mock.calls.length).toBe(1);
+  expect(onCardClick.mock.calls.length).toBe(1);
 });
 
 

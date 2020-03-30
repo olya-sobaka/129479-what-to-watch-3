@@ -22,7 +22,7 @@ class VideoPlayer extends React.PureComponent {
 
 
   render() {
-    const {previewMp4, previewWebm, posterSrc: filmPoster} = this.props.film;
+    const {previewMp4, previewWebm, poster: filmPoster} = this.props.film;
 
     return (
       <video
@@ -50,7 +50,7 @@ VideoPlayer.propTypes = {
 
   film: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    posterSrc: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
     id: PropTypes.number.isRequiredб,
     previewMp4: PropTypes.string.isRequired,
     previewWebm: PropTypes.string.isRequired
