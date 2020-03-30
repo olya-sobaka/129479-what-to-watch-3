@@ -55,6 +55,10 @@ Main.propTypes = {
 
   onGenreClick: PropTypes.func,
 
+  onCardClick: PropTypes.func,
+
+  activeFilmId: PropTypes.number,
+
   genre: PropTypes.string
 };
 

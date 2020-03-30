@@ -64,4 +64,13 @@ const MovieCard = (props) => {
   );
 };
 
+MovieCard.propTypes = {
+  activeFilm: PropTypes.shape({
+    title: PropTypes.string,
+    genre: PropTypes.string,
+    year: PropTypes.number,
+    poster: PropTypes.string
+  })
+};
+
 export default MovieCard;

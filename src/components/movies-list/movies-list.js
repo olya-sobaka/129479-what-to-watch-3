@@ -10,7 +10,7 @@ const MoviesList = (props) => {
   const {films, genre, onCardClick} = props;
 
   const filmsFiltered = films.filter((film) => film.genre === genre);
-  const filmsByGenre = genre == `all genres` ? films : filmsFiltered;
+  const filmsByGenre = genre === `all genres` ? films : filmsFiltered;
 
   return (
     <div className="catalog__movies-list">
@@ -35,7 +35,11 @@ MoviesList.propTypes = {
         poster: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
       })
-  ).isRequired
+  ).isRequired,
+
+  genre: PropTypes.string,
+
+  onCardClick: PropTypes.func
 };
 
 export default MoviesList;

@@ -25,6 +25,13 @@ App.propTypes = {
         id: PropTypes.number.isRequired
       })
   ).isRequired,
+
+  genre: PropTypes.string,
+
+  onGenreClick: PropTypes.func,
+  onCardClick: PropTypes.func,
+
+  activeFilmId: PropTypes.number
 };
 
 export default App;
