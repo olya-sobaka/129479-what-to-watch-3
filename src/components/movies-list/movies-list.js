@@ -7,7 +7,7 @@ const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
 
 const MoviesList = (props) => {
 
-  const {films, onHeadingClick, genre} = props;
+  const {films, genre, onCardClick} = props;
 
   const filmsFiltered = films.filter((film) => film.genre === genre);
   const filmsByGenre = genre == `all genres` ? films : filmsFiltered;
@@ -17,9 +17,9 @@ const MoviesList = (props) => {
       {filmsByGenre.map((film) => {
         return (
           <SmallMovieCardWrapped
-            onHeadingClick={onHeadingClick}
             key={film.id}
             film={film}
+            onCardClick={onCardClick}
           />
         );
       })}
@@ -32,12 +32,10 @@ MoviesList.propTypes = {
   films: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        posterSrc: PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
       })
-  ).isRequired,
-
-  onHeadingClick: PropTypes.func
+  ).isRequired
 };
 
 export default MoviesList;

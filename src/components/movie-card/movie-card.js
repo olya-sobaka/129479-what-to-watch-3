@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {capitalizeFirstLetter} from "../../utils";
 
 const MovieCard = (props) => {
 
-  const movie = props;
+  const {activeFilm} = props;
 
   return (
     <section className="movie-card">
@@ -31,15 +32,15 @@ const MovieCard = (props) => {
       <div className="movie-card__wrap">
         <div className="movie-card__info">
           <div className="movie-card__poster">
-            <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
+            <img src={activeFilm.poster} alt="The Grand Budapest Hotel poster" width="218"
               height="327"/>
           </div>
 
           <div className="movie-card__desc">
-            <h2 className="movie-card__title">{movie.title}</h2>
+            <h2 className="movie-card__title">{activeFilm.title}</h2>
             <p className="movie-card__meta">
-              <span className="movie-card__genre">{movie.genre}</span>
-              <span className="movie-card__year">{movie.year}</span>
+              <span className="movie-card__genre">{capitalizeFirstLetter(activeFilm.genre)}</span>
+              <span className="movie-card__year">{activeFilm.year}</span>
             </p>
 
             <div className="movie-card__buttons">

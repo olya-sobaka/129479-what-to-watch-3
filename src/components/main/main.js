@@ -6,17 +6,22 @@ import MovieCard from "../movie-card/movie-card";
 
 const Main = (props) => {
 
-  const {movie, films, onHeadingClick, genre, onGenreClick} = props;
+  const {films, genre, onGenreClick, onCardClick, activeFilmId} = props;
+
+  let activeFilm = films[0];
+
+  films.map((film) => {
+    if (film.id === activeFilmId) {
+      activeFilm = film;
+    }
+  });
 
   return (
     <React.Fragment>
 
-
-        <MovieCard
-          title={movie.title}
-          genre={movie.genre}
-          year={movie.year}
-        />
+      <MovieCard
+        activeFilm={activeFilm}
+      />
 
 
       <div className="page-content">
@@ -29,8 +34,8 @@ const Main = (props) => {
           />
           <MoviesList
             films={films}
-            onHeadingClick={onHeadingClick}
             genre={genre}
+            onCardClick={onCardClick}
           />
         </section>
       </div>
@@ -43,18 +48,10 @@ Main.propTypes = {
   films: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        posterSrc: PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
       })
   ).isRequired,
-
-  movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired
-  }),
-
-  onHeadingClick: PropTypes.func,
 
   onGenreClick: PropTypes.func,
 
