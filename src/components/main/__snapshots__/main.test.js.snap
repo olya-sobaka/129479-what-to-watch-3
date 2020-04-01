@@ -8,24 +8,133 @@ Array [
     <div
       className="movie-card__bg"
     >
+      <img
+        alt="The Grand Budapest Hotel"
+        src="img/bg-the-grand-budapest-hotel.jpg"
+      />
+    </div>
+    <h1
+      className="visually-hidden"
+    >
+      WTW
+    </h1>
+    <header
+      className="page-header movie-card__head"
+    >
       <div
-        className="movie-card__desc"
+        className="logo"
       >
-        <h2
-          className="movie-card__title"
+        <a
+          className="logo__link"
+          href="main.html"
         >
-          Kiki's Delivery Service
-        </h2>
-        <span
-          className="movie-card__genre"
+          <span
+            className="logo__letter logo__letter--1"
+          >
+            W
+          </span>
+          <span
+            className="logo__letter logo__letter--2"
+          >
+            T
+          </span>
+          <span
+            className="logo__letter logo__letter--3"
+          >
+            W
+          </span>
+        </a>
+      </div>
+      <div
+        className="user-block"
+      >
+        <div
+          className="user-block__avatar"
         >
-          Drama/Fantasy
-        </span>
-        <span
-          className="movie-card__year"
+          <img
+            alt="User avatar"
+            height="63"
+            src="img/avatar.jpg"
+            width="63"
+          />
+        </div>
+      </div>
+    </header>
+    <div
+      className="movie-card__wrap"
+    >
+      <div
+        className="movie-card__info"
+      >
+        <div
+          className="movie-card__poster"
         >
-          1989
-        </span>
+          <img
+            alt="The Grand Budapest Hotel poster"
+            height="327"
+            src="img/midnight-special.jpg"
+            width="218"
+          />
+        </div>
+        <div
+          className="movie-card__desc"
+        >
+          <h2
+            className="movie-card__title"
+          >
+            Kiki's Delivery Service
+          </h2>
+          <p
+            className="movie-card__meta"
+          >
+            <span
+              className="movie-card__genre"
+            >
+              Horror
+            </span>
+            <span
+              className="movie-card__year"
+            />
+          </p>
+          <div
+            className="movie-card__buttons"
+          >
+            <button
+              className="btn btn--play movie-card__button"
+              type="button"
+            >
+              <svg
+                height="19"
+                viewBox="0 0 19 19"
+                width="19"
+              >
+                <use
+                  xlinkHref="#play-s"
+                />
+              </svg>
+              <span>
+                Play
+              </span>
+            </button>
+            <button
+              className="btn btn--list movie-card__button"
+              type="button"
+            >
+              <svg
+                height="20"
+                viewBox="0 0 19 20"
+                width="19"
+              >
+                <use
+                  xlinkHref="#add"
+                />
+              </svg>
+              <span>
+                My list
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>,
@@ -93,6 +202,7 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onClick={[Function]}
           onMouseEnter={[Function]}
           onMouseOut={[Function]}
         >
@@ -108,7 +218,6 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"

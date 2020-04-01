@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 import Main from "../main/main.js";
 
 const App = (props) => {
-  const {movie, films, genre, onGenreClick} = props;
-
-  const handleHeadingClick = () => {};
+  const {films, genre, onGenreClick, onCardClick, activeFilmId} = props;
 
   return (
     <Main
-      movie={movie}
       films={films}
       genre={genre}
-      onHeadingClick={handleHeadingClick}
       onGenreClick={onGenreClick}
+      onCardClick={onCardClick}
+      activeFilmId={activeFilmId}
     />
   );
 };
@@ -23,16 +21,17 @@ App.propTypes = {
   films: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        posterSrc: PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
       })
   ).isRequired,
 
-  movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired
-  })
+  genre: PropTypes.string,
+
+  onGenreClick: PropTypes.func,
+  onCardClick: PropTypes.func,
+
+  activeFilmId: PropTypes.number
 };
 
 export default App;

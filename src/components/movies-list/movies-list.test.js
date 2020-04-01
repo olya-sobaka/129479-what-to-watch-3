@@ -5,17 +5,17 @@ import MoviesList from "./movies-list.js";
 const movies = [
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 36
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 37
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 38
   }
 ];

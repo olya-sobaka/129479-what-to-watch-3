@@ -44,7 +44,7 @@ GenresList.propTypes = {
   films: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        posterSrc: PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
         genre: PropTypes.string.isRequired
       })

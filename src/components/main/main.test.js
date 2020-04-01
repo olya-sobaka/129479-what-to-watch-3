@@ -2,7 +2,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Main from "./main.js";
-import MoviesList from "../movies-list/movies-list";
 
 const movie = {
   title: `Kiki's Delivery Service`,
@@ -13,19 +12,19 @@ const movie = {
 const movies = [
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 36,
     genre: `horror`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 37,
     genre: `drama`
   },
   {
     title: `Kiki's Delivery Service`,
-    posterSrc: `img/midnight-special.jpg`,
+    poster: `img/midnight-special.jpg`,
     id: 38,
     genre: `documentary`
   }

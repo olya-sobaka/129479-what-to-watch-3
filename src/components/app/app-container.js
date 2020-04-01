@@ -4,11 +4,12 @@ import {ActionType} from "../../reducer";
 
 const mapStateToProps = (state) => {
 
-  const {genre, films} = state;
+  const {genre, films, activeFilmId} = state;
 
   return {
     genre,
-    films
+    films,
+    activeFilmId
   };
 };
 
@@ -18,6 +19,10 @@ const mapDispatchToProps = (dispatch) => {
       type: ActionType.SET_ACTIVE_GENRE,
       payload: {newGenre}
     }),
+    onCardClick: (newFilmId) => dispatch({
+      type: ActionType.SET_ACTIVE_FILM,
+      payload: {newFilmId}
+    })
   };
 };
 

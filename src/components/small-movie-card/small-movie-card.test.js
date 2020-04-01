@@ -4,7 +4,7 @@ import SmallMovieCard from "./small-movie-card.js";
 
 const movie = {
   title: `Kiki's Delivery Service`,
-  posterSrc: `img/midnight-special.jpg`,
+  poster: `img/midnight-special.jpg`,
   id: 36,
   previewMp4: `https://coverr.co/videos/norway-road-f0J1etTrcQ`,
   previewWebm: `https://coverr.co/videos/morning-sunshine-Of9KYVXN1C`
