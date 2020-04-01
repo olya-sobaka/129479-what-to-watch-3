@@ -1,7 +1,7 @@
 import {extend} from "./utils.js";
 import films from "./mocks/films";
 
-const initialState = {
+export const initialState = {
   genre: `all genres`,
   films,
   activeFilmId: null
