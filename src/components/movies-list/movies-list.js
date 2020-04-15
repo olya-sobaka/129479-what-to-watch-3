@@ -7,10 +7,7 @@ const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
 
 const MoviesList = (props) => {
 
-  const {films, genre, onCardClick} = props;
-
-  const filmsFiltered = films.filter((film) => film.genre === genre);
-  const filmsByGenre = genre === `all genres` ? films : filmsFiltered;
+  const {onCardClick, filmsByGenre} = props;
 
   return (
     <div className="catalog__movies-list">

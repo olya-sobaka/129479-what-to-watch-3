@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MovieCardFull from "../movie-card-full/movie-card-full";
+import
+  MovieCardFull from "../movie-card-full/movie-card-full";
+import PageContent from "../page-content/page-content";
 
 const MoviePage = (props) => {
 
-  const {films} = props;
+  const {films, onTabClick, activeTab, currentFilm} = props;
 
   return (
     <React.Fragment>
@@ -50,7 +52,9 @@ const MoviePage = (props) => {
         </svg>
       </div>
 
-      <MovieCardFull films={films} />
+      <MovieCardFull films={films} onTabClick={onTabClick} activeTab={activeTab} currentFilm={currentFilm}/>
+
+      <PageContent films={films} moreLike={true} onCardClick={() => {}} onGenreClick={() => {}} currentFilm={currentFilm}/>
 
     </React.Fragment>
   );
