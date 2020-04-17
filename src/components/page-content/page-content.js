@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 import GenresList from "../genres-list/genres-list";
 import MoviesList from "../movies-list/movies-list";
 
@@ -16,11 +17,11 @@ const PageContent = (props) => {
   if (moreLike) {
     filmsByGenre = filmsFiltered.filter((film) => film.id !== currentFilm.id);
     filmsByGenre = filmsByGenre.slice(0, 4);
-  };
+  }
 
   if (!moreLike) {
     filmsByGenre = filmsByGenre.slice(0, 20);
-  };
+  }
 
   return (
     <div className="page-content">
@@ -47,6 +48,34 @@ const PageContent = (props) => {
       </section>
     </div>
   );
+};
+
+PageContent.propTypes = {
+
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        poster: PropTypes.string,
+        id: PropTypes.number.isRequired,
+        previewMp4: PropTypes.string,
+        previewWebm: PropTypes.string,
+        genre: PropTypes.string.isRequired,
+        year: PropTypes.number
+      })
+  ),
+
+  genre: PropTypes.string,
+
+  onGenreClick: PropTypes.func.isRequired,
+
+  onCardClick: PropTypes.func.isRequired,
+
+  moreLike: PropTypes.bool,
+
+  currentFilm: PropTypes.shape({
+    id: PropTypes.number,
+    genre: PropTypes.string
+  })
 };
 
 export default PageContent;

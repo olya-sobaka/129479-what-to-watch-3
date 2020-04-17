@@ -83,7 +83,11 @@ MovieCardFull.propTypes = {
         genre: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired
       })
-  )
+  ),
+
+  onTabClick: PropTypes.func.isRequired,
+
+  activeTab: PropTypes.string
 };
 
 export default MovieCardFull;

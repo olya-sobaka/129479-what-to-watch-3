@@ -51,7 +51,7 @@ VideoPlayer.propTypes = {
   film: PropTypes.shape({
     title: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequiredб,
+    id: PropTypes.number.isRequired,
     previewMp4: PropTypes.string.isRequired,
     previewWebm: PropTypes.string.isRequired
   }).isRequired

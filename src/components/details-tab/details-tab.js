@@ -1,6 +1,6 @@
 import React from "react";
 
-const DetailsTab = (props) => {
+const DetailsTab = () => {
 
   return (
     <>

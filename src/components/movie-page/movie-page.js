@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import
-  MovieCardFull from "../movie-card-full/movie-card-full";
+import MovieCardFull from "../movie-card-full/movie-card-full";
 import PageContent from "../page-content/page-content";
 
 const MoviePage = (props) => {
@@ -68,7 +67,16 @@ MoviePage.propTypes = {
         id: PropTypes.number.isRequired,
         genre: PropTypes.string.isRequired
       })
-  ).isRequired
+  ).isRequired,
+
+  onTabClick: PropTypes.func.isRequired,
+
+  activeTab: PropTypes.string,
+
+  currentFilm: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    genre: PropTypes.string.isRequired
+  })
 };
 
 export default MoviePage;

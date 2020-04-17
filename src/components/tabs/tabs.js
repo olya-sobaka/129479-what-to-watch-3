@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReviewsTab from "../reviews-tab/reviews-tab";
 import DetailsTab from "../details-tab/details-tab";
 import OverviewTab from "../overview-tab/overview-tab";
@@ -50,6 +51,13 @@ const Tabs = (props) => {
 
     </div>
   );
+};
+
+Tabs.propTypes = {
+
+  onTabClick: PropTypes.func.isRequired,
+
+  activeTab: PropTypes.string.isRequired
 };
 
 export default Tabs;

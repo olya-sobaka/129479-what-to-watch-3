@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewsTab = (props) => {
+const ReviewsTab = () => {
 
   return (
     <>
@@ -9,7 +9,7 @@ const ReviewsTab = (props) => {
           <div className="review">
             <blockquote className="review__quote">
               <p className="review__text">Discerning travellers and Wes Anderson fans will luxuriate in the glorious
-                Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in
+                Mittel-European kitsch of one of the {`director's`} funniest and most exquisitely designed movies in
                 years.</p>
 
               <footer className="review__details">
@@ -23,8 +23,8 @@ const ReviewsTab = (props) => {
 
           <div className="review">
             <blockquote className="review__quote">
-              <p className="review__text">Anderson's films are too precious for some, but for those of us willing to
-                lose ourselves in them, they're a delight. "The Grand Budapest Hotel" is no different, except that he
+              <p className="review__text">{`Anderson's`} films are too precious for some, but for those of us willing to
+                lose ourselves in them, {`they're`} a delight. {`"The Grand Budapest Hotel"`} is no different, except that he
                 has added a hint of gravitas to the mix, improving the recipe.</p>
 
               <footer className="review__details">
