@@ -23,8 +23,10 @@ const films = [
   }
 ];
 
+const mockFunc = () => {};
+
 it(`PageContent renders correctly when prop genre is passed`, () => {
-  const mockFunc = () => {};
+
   const genre = `documentary`;
 
   const tree = renderer.create(
@@ -35,7 +37,7 @@ it(`PageContent renders correctly when prop genre is passed`, () => {
 });
 
 it(`PageContent renders correctly when prop moreLike is passed`, () => {
-  const mockFunc = () => {};
+
   const currentFilm = {
     id: 50,
     genre: `horror`

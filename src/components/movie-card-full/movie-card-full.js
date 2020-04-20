@@ -7,6 +7,8 @@ const MovieCardFull = (props) => {
 
   const {films, onTabClick, activeTab} = props;
 
+  console.log(onTabClick);
+
   let film = films[0];
 
   return (
