@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContent renders correctly when prop genre is passed 1`] = `[Function]`;
+
+exports[`PageContent renders correctly when prop moreLike is passed 1`] = `[Function]`;

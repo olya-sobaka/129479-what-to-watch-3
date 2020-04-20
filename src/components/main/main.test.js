@@ -33,15 +33,15 @@ const movies = [
 it(`Main renders correctly`, () => {
 
   const genre = movies[0].genre;
-  const onHeadingClick = () => {};
-  const onGenreClick = () => {};
+  const mockFunc = () => {};
 
   const tree = renderer.create(
     <Main movie={movie}
           films={movies}
-          onHeadingClick={onHeadingClick}
+          onHeadingClick={mockFunc}
           genre={genre}
-          onGenreClick={onGenreClick}
+          onGenreClick={mockFunc}
+          onCardClick={mockFunc}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();

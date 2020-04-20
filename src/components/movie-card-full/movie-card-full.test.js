@@ -18,8 +18,12 @@ const films = [{
 }];
 
 it(`MovieCardFull should render correctly`, () => {
+
+  const mockFunc = () => {};
+  const activeTab = `overview`;
+
   const tree = renderer.create(
-      <MovieCardFull films={films} />
+      <MovieCardFull films={films} onTabClick={mockFunc} activeTab={activeTab} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
