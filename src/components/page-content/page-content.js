@@ -2,53 +2,83 @@ import React from "react";
 import PropTypes from "prop-types";
 import GenresList from "../genres-list/genres-list";
 import MoviesList from "../movies-list/movies-list";
+import ShowMore from "../show-more/show-more";
 
-const PageContent = (props) => {
+class PageContent extends React.PureComponent {
 
-  const {films, genre, onGenreClick, onCardClick, moreLike, currentFilm} = props;
-
-  const catalogClassNameGenres = `catalog`;
-  const catalogClassNameMoreLike = `catalog catalog--like-this`;
-  const currentGenre = moreLike ? currentFilm.genre : genre;
-
-  const filmsFiltered = films.filter((film) => film.genre === currentGenre);
-  let filmsByGenre = currentGenre === `all genres` ? films : filmsFiltered;
-
-  if (moreLike) {
-    filmsByGenre = filmsFiltered.filter((film) => film.id !== currentFilm.id);
-    filmsByGenre = filmsByGenre.slice(0, 4);
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMoreClicks: 1
+    };
+    this.onShowMoreClick = this.onShowMoreClick.bind(this);
   }
 
-  if (!moreLike) {
-    filmsByGenre = filmsByGenre.slice(0, 20);
+  onShowMoreClick() {
+    const {showMoreClicks} = this.state;
+    this.setState({showMoreClicks: showMoreClicks + 1});
   }
 
-  return (
-    <div className="page-content">
-      <section className={moreLike ? catalogClassNameMoreLike : catalogClassNameGenres}>
-        <h2 className="catalog__title visually-hidden">Catalog</h2>
+  render() {
+    const {films, genre, onGenreClick, onCardClick, moreLike, currentFilm} = this.props;
+    const {showMoreClicks} = this.state;
+    const catalogClassNameGenres = `catalog`;
+    const catalogClassNameMoreLike = `catalog catalog--like-this`;
+    const currentGenre = moreLike ? currentFilm.genre : genre;
+    let maxNumberOfFilms = 8 * showMoreClicks;
 
-        {genre && (
-          <GenresList
-            films={films}
-            activeGenre={genre}
-            onGenreClick={onGenreClick}
+    const resetShowMoreClicks = () => {
+      this.setState({showMoreClicks: 1});
+    };
+
+
+    const filmsFiltered = films.filter((film) => film.genre === currentGenre);
+    let filmsByGenre = currentGenre === `all genres` ? films : filmsFiltered;
+    let filmsShowing = filmsByGenre;
+
+
+    if (moreLike) {
+      maxNumberOfFilms = 4;
+      filmsByGenre = filmsFiltered.filter((film) => film.id !== currentFilm.id);
+      filmsByGenre = filmsByGenre.slice(0, maxNumberOfFilms);
+    }
+
+    if (!moreLike) {
+      filmsShowing = filmsShowing.slice(0, maxNumberOfFilms);
+    }
+
+    return (
+      <div className="page-content">
+        <section className={moreLike ? catalogClassNameMoreLike : catalogClassNameGenres}>
+          <h2 className="catalog__title visually-hidden">Catalog</h2>
+
+          {genre && (
+            <GenresList
+              films={films}
+              activeGenre={genre}
+              onGenreClick={(newGenre) => {
+                resetShowMoreClicks();
+                onGenreClick(newGenre);
+              }}
+            />
+          )}
+
+          {moreLike && (
+            <h2 className="catalog__title">More like this</h2>
+          )}
+
+          <MoviesList
+            onCardClick={onCardClick}
+            filmsByGenre={filmsShowing}
           />
-        )}
 
-        {moreLike && (
-          <h2 className="catalog__title">More like this</h2>
-        )}
+          {filmsByGenre.length > maxNumberOfFilms && <ShowMore onShowMoreClick={this.onShowMoreClick}/>}
 
-        <MoviesList
-          onCardClick={onCardClick}
-          filmsByGenre={filmsByGenre}
-        />
-
-      </section>
-    </div>
-  );
-};
+        </section>
+      </div>
+    );
+  }
+}
 
 PageContent.propTypes = {
 
