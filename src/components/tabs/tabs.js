@@ -6,7 +6,7 @@ import OverviewTab from "../overview-tab/overview-tab";
 
 const Tabs = (props) => {
 
-  const {onTabClick, activeTab} = props;
+  const {updateActiveItem, activeItem} = props;
   const activeClassName = `movie-nav__item--active movie-nav__item`;
   const nonActiveClassName = `movie-nav__item`;
 
@@ -16,36 +16,36 @@ const Tabs = (props) => {
         <ul className="movie-nav__list">
           <li
             onClick={() => {
-              onTabClick(`overview`);
+              updateActiveItem(`overview`);
             }}
-            className={activeTab === `overview` ? activeClassName : nonActiveClassName}>
+            className={activeItem === `overview` ? activeClassName : nonActiveClassName}>
             <a href="#" className="movie-nav__link">Overview</a>
           </li>
           <li
             onClick={() => {
-              onTabClick(`details`);
+              updateActiveItem(`details`);
             }}
-            className={activeTab === `details` ? activeClassName : nonActiveClassName}>
+            className={activeItem === `details` ? activeClassName : nonActiveClassName}>
             <a href="#" className="movie-nav__link">Details</a>
           </li>
           <li
             onClick={() => {
-              onTabClick(`reviews`);
+              updateActiveItem(`reviews`);
             }}
-            className={activeTab === `reviews` ? activeClassName : nonActiveClassName}>
+            className={activeItem === `reviews` ? activeClassName : nonActiveClassName}>
             <a href="#" className="movie-nav__link">Reviews</a>
           </li>
         </ul>
       </nav>
-      {activeTab === `overview` && (
+      {activeItem === `overview` && (
         <OverviewTab/>
       )}
 
-      {activeTab === `details` && (
+      {activeItem === `details` && (
         <DetailsTab/>
       )}
 
-      {activeTab === `reviews` && (
+      {activeItem === `reviews` && (
         <ReviewsTab/>
       )}
 
@@ -55,9 +55,9 @@ const Tabs = (props) => {
 
 Tabs.propTypes = {
 
-  onTabClick: PropTypes.func.isRequired,
+  updateActiveItem: PropTypes.func.isRequired,
 
-  activeTab: PropTypes.string.isRequired
+  activeItem: PropTypes.string.isRequired
 };
 
 export default Tabs;

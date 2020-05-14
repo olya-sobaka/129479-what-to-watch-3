@@ -5,18 +5,18 @@ export const initialState = {
   genre: `all genres`,
   films,
   activeFilmId: null,
-  activeTab: `overview`,
   currentFilm: {
     id: 1,
-    genre: `documentary`
-  }
+    genre: `documentary`,
+  },
+  videoPlayerFilmId: 1
 };
 
 export const ActionType = {
   SET_ACTIVE_GENRE: `SET_ACTIVE_GENRE`,
   SET_ACTIVE_FILM: `SET_ACTIVE_FILM`,
-  SET_ACTIVE_TAB: `SET_ACTIVE_TAB`,
-  SET_CURRENT_FILM: `SET_CURRENT_FILM`
+  SET_CURRENT_FILM: `SET_CURRENT_FILM`,
+  SET_VIDEO_PLAYER_FILM_ID: `SET_VIDEO_PLAYER_FILM_ID`
 };
 
 
@@ -29,11 +29,11 @@ export const reducer = (state = initialState, action) => {
     case ActionType.SET_ACTIVE_FILM:
       return extend(state, {activeFilmId: action.payload.newFilmId});
 
-    case ActionType.SET_ACTIVE_TAB:
-      return extend(state, {activeTab: action.payload.newTab});
-
     case ActionType.SET_CURRENT_FILM:
       return extend(state, {currentFilm: action.payload.newFilm});
+
+    case ActionType.SET_VIDEO_PLAYER_FILM_ID:
+      return extend(state, {videoPlayerFilmId: action.payload.videoPlayerFilmId});
   }
   return state;
 };

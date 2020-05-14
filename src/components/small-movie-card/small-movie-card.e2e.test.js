@@ -29,12 +29,12 @@ it(`SmallMovieCard should be pressed`, () => {
 
 
 it(`SmallMovieCard onMouseOver event should be triggered`, () => {
-  const onCardHover = jest.fn();
+  const updateActiveItem = jest.fn();
 
   const smallMovieCard = shallow(
       <SmallMovieCard
         film={movie}
-        onCardHover={onCardHover}
+        updateActiveItem={updateActiveItem}
       />
   );
 
@@ -42,5 +42,5 @@ it(`SmallMovieCard onMouseOver event should be triggered`, () => {
 
   movieCard.props().onMouseEnter();
 
-  expect(onCardHover.mock.calls.length).toBe(1);
+  expect(updateActiveItem.mock.calls.length).toBe(1);
 });

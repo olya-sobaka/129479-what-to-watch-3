@@ -30,7 +30,7 @@ it(`PageContent renders correctly when prop genre is passed`, () => {
   const genre = `documentary`;
 
   const tree = renderer.create(
-      <PageContent onGenreClick={mockFunc} onCardClick={mockFunc} films={films} genre={genre} />
+      <PageContent onGenreClick={mockFunc} onCardClick={mockFunc} films={films} activeGenre={genre} />
   ).toJSON;
 
   expect(tree).toMatchSnapshot();
@@ -44,7 +44,12 @@ it(`PageContent renders correctly when prop moreLike is passed`, () => {
   };
 
   const tree = renderer.create(
-      <PageContent onGenreClick={mockFunc} onCardClick={mockFunc} films={films} moreLike={true} currentFilm={currentFilm} />
+      <PageContent
+        onGenreClick={mockFunc}
+        onCardClick={mockFunc}
+        films={films}
+        moreLike={true}
+        currentFilm={currentFilm} />
   ).toJSON;
 
   expect(tree).toMatchSnapshot();

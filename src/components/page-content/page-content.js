@@ -20,17 +20,16 @@ class PageContent extends React.PureComponent {
   }
 
   render() {
-    const {films, genre, onGenreClick, onCardClick, moreLike, currentFilm} = this.props;
+    const {films, activeGenre, onCardClick, moreLike, currentFilm, onGenreClick} = this.props;
     const {showMoreClicks} = this.state;
     const catalogClassNameGenres = `catalog`;
     const catalogClassNameMoreLike = `catalog catalog--like-this`;
-    const currentGenre = moreLike ? currentFilm.genre : genre;
+    const currentGenre = moreLike ? currentFilm.genre : activeGenre;
     let maxNumberOfFilms = 8 * showMoreClicks;
 
     const resetShowMoreClicks = () => {
       this.setState({showMoreClicks: 1});
     };
-
 
     const filmsFiltered = films.filter((film) => film.genre === currentGenre);
     let filmsByGenre = currentGenre === `all genres` ? films : filmsFiltered;
@@ -40,7 +39,7 @@ class PageContent extends React.PureComponent {
     if (moreLike) {
       maxNumberOfFilms = 4;
       filmsByGenre = filmsFiltered.filter((film) => film.id !== currentFilm.id);
-      filmsByGenre = filmsByGenre.slice(0, maxNumberOfFilms);
+      filmsShowing = filmsByGenre.slice(0, maxNumberOfFilms);
     }
 
     if (!moreLike) {
@@ -52,14 +51,12 @@ class PageContent extends React.PureComponent {
         <section className={moreLike ? catalogClassNameMoreLike : catalogClassNameGenres}>
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          {genre && (
+          {activeGenre && (
             <GenresList
               films={films}
-              activeGenre={genre}
-              onGenreClick={(newGenre) => {
-                resetShowMoreClicks();
-                onGenreClick(newGenre);
-              }}
+              resetShowMoreClicks={resetShowMoreClicks}
+              onGenreClick={onGenreClick}
+              activeGenre={activeGenre}
             />
           )}
 
@@ -69,10 +66,10 @@ class PageContent extends React.PureComponent {
 
           <MoviesList
             onCardClick={onCardClick}
-            filmsByGenre={filmsShowing}
+            filmsByAllGenres={filmsShowing}
           />
 
-          {filmsByGenre.length > maxNumberOfFilms && <ShowMore onShowMoreClick={this.onShowMoreClick}/>}
+          {filmsByGenre.length > maxNumberOfFilms && !moreLike && <ShowMore onShowMoreClick={this.onShowMoreClick}/>}
 
         </section>
       </div>
@@ -94,7 +91,7 @@ PageContent.propTypes = {
       })
   ),
 
-  genre: PropTypes.string,
+  activeGenre: PropTypes.string,
 
   onGenreClick: PropTypes.func.isRequired,
 

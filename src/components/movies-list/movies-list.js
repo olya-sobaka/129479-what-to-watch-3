@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SmallMovieCard from "../small-movie-card/small-movie-card.js";
-import withActiveCard from "../../hocs/with-active-card/with-active-card.js";
+import withActiveItem from "../../hocs/with-active-card/with-active-item.js";
 
-const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
+const SmallMovieCardWrapped = withActiveItem(SmallMovieCard);
 
 const MoviesList = (props) => {
 
-  const {onCardClick, filmsByGenre} = props;
+  const {onCardClick, filmsByAllGenres} = props;
 
   return (
     <div className="catalog__movies-list">
-      {filmsByGenre.map((film) => {
+      {filmsByAllGenres.map((film) => {
         return (
           <SmallMovieCardWrapped
             key={film.id}
@@ -28,7 +28,7 @@ MoviesList.propTypes = {
 
   onCardClick: PropTypes.func,
 
-  filmsByGenre: PropTypes.arrayOf(
+  filmsByAllGenres: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         poster: PropTypes.string,

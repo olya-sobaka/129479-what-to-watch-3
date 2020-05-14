@@ -8,30 +8,38 @@ class VideoPlayer extends React.PureComponent {
   }
 
   componentDidMount() {
-    const play = () => {
-      if (this._videoRef.current) {
-        this._videoRef.current.play();
-      }
-    };
-    this._timeout = setTimeout(play, 1000);
+    const {playOnHover} = this.props;
+    if (playOnHover) {
+      const play = () => {
+        if (this._videoRef.current) {
+          this._videoRef.current.play();
+        }
+      };
+      this._timeout = setTimeout(play, 1000);
+    }
   }
 
   componentWillUnmount() {
-    clearTimeout(this._timeout);
+    const {playOnHover} = this.props;
+    if (playOnHover) {
+      clearTimeout(this._timeout);
+    }
   }
 
 
   render() {
-    const {previewMp4, previewWebm, poster: filmPoster} = this.props.film;
+    const {previewMp4, previewWebm, poster} = this.props.film;
+    const {controls, muted} = this.props;
 
     return (
       <video
         ref={this._videoRef}
-        width="280" // пока неточно
-        height="175"
+        width="100%"
+        height="100%"
         className="player__video"
-        muted={true}
-        poster={filmPoster}
+        muted={muted}
+        poster={poster}
+        controls={controls}
       >
         <source
           src={previewMp4}
@@ -54,7 +62,13 @@ VideoPlayer.propTypes = {
     id: PropTypes.number.isRequired,
     previewMp4: PropTypes.string.isRequired,
     previewWebm: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+
+  controls: PropTypes.bool.isRequired,
+
+  muted: PropTypes.bool.isRequired,
+
+  playOnHover: PropTypes.bool
 };
 
 export default VideoPlayer;
