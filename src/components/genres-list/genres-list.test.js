@@ -23,14 +23,14 @@ const movies = [
   }
 ];
 
-const handleGenreClick = () => {};
+const mockFunc = () => {};
 
 it(`renders correctly`, () => {
 
   const activeGenre = `horror`;
 
   const tree = renderer.create(
-      <GenresList films={movies} activeGenre={activeGenre} onGenreClick={handleGenreClick} />
+      <GenresList films={movies} activeGenre={activeGenre} onGenreClick={mockFunc} resetShowMoreClicks={mockFunc} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
