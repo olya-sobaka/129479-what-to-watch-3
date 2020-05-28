@@ -12,10 +12,11 @@ exports[`renders VideoPlayer component when the card is active 1`] = `
   >
     <video
       className="player__video"
-      height="175"
+      controls={false}
+      height="100%"
       muted={true}
       poster="img/midnight-special.jpg"
-      width="280"
+      width="100%"
     >
       <source
         src="https://coverr.co/videos/norway-road-f0J1etTrcQ"

@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MoviesList from "../movies-list/movies-list";
-import GenresList from "../genres-list/genres-list";
 import MovieCard from "../movie-card/movie-card";
+import PageContent from "../page-content/page-content";
 
 const Main = (props) => {
 
-  const {films, genre, onGenreClick, onCardClick, activeFilmId} = props;
+  const {films, onGenreClick, onCardClick, activeFilmId, activeGenre} = props;
 
   let activeFilm = films[0];
 
@@ -17,29 +16,12 @@ const Main = (props) => {
   });
 
   return (
-    <React.Fragment>
-
+    <>
       <MovieCard
         activeFilm={activeFilm}
       />
-
-
-      <div className="page-content">
-        <section className="catalog">
-          <h2 className="catalog__title visually-hidden">Catalog</h2>
-          <GenresList
-            films={films}
-            activeGenre={genre}
-            onGenreClick={onGenreClick}
-          />
-          <MoviesList
-            films={films}
-            genre={genre}
-            onCardClick={onCardClick}
-          />
-        </section>
-      </div>
-    </React.Fragment>
+      <PageContent films={films} onCardClick={onCardClick} onGenreClick={onGenreClick} activeGenre={activeGenre} />
+    </>
   );
 };
 

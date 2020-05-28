@@ -1,20 +1,17 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SmallMovieCard from "../small-movie-card/small-movie-card.js";
-import withActiveCard from "../../hocs/with-active-card/with-active-card.js";
+import withActiveItem from "../../hocs/with-active-card/with-active-item.js";
 
-const SmallMovieCardWrapped = withActiveCard(SmallMovieCard);
+const SmallMovieCardWrapped = withActiveItem(SmallMovieCard);
 
 const MoviesList = (props) => {
 
-  const {films, genre, onCardClick} = props;
-
-  const filmsFiltered = films.filter((film) => film.genre === genre);
-  const filmsByGenre = genre === `all genres` ? films : filmsFiltered;
+  const {onCardClick, filmsByAllGenres} = props;
 
   return (
     <div className="catalog__movies-list">
-      {filmsByGenre.map((film) => {
+      {filmsByAllGenres.map((film) => {
         return (
           <SmallMovieCardWrapped
             key={film.id}
@@ -29,17 +26,19 @@ const MoviesList = (props) => {
 
 MoviesList.propTypes = {
 
-  films: PropTypes.arrayOf(
+  onCardClick: PropTypes.func,
+
+  filmsByAllGenres: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        poster: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired
+        poster: PropTypes.string,
+        id: PropTypes.number.isRequired,
+        previewMp4: PropTypes.string,
+        previewWebm: PropTypes.string,
+        genre: PropTypes.string.isRequired,
+        year: PropTypes.number
       })
-  ).isRequired,
-
-  genre: PropTypes.string,
-
-  onCardClick: PropTypes.func
+  )
 };
 
 export default MoviesList;

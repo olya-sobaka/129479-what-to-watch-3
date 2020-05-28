@@ -6,6 +6,7 @@ import {reducer} from "./reducer.js";
 import AppContainer from "./components/app/app-container";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import MoviePageContainer from "./components/movie-page/movie-page-container";
+import PlayPageContainer from "./components/play-page/play-page-container";
 
 const store = createStore(
     reducer,
@@ -21,6 +22,9 @@ ReactDOM.render(
           </Route>
           <Route exact path="/movie-page">
             <MoviePageContainer/>
+          </Route>
+          <Route exact path="/play-page">
+            <PlayPageContainer/>
           </Route>
         </Switch>
       </BrowserRouter>

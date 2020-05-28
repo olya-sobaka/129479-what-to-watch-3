@@ -74,6 +74,51 @@ const films = [
     previewWebm,
     genre: `romance`,
     year: 2014
+  },
+  {
+    title: `Bohemian Rhapsody2`,
+    poster,
+    id: 9,
+    previewMp4,
+    previewWebm,
+    genre: `documentary`,
+    year: 2014
+  },
+  {
+    title: `Bohemian Rhapsody3`,
+    poster,
+    id: 10,
+    previewMp4,
+    previewWebm,
+    genre: `documentary`,
+    year: 2014
+  },
+  {
+    title: `Bohemian Rhapsody4`,
+    poster,
+    id: 11,
+    previewMp4,
+    previewWebm,
+    genre: `documentary`,
+    year: 2014
+  },
+  {
+    title: `Bohemian Rhapsody5`,
+    poster,
+    id: 12,
+    previewMp4,
+    previewWebm,
+    genre: `documentary`,
+    year: 2014
+  },
+  {
+    title: `Bohemian Rhapsody6`,
+    poster,
+    id: 13,
+    previewMp4,
+    previewWebm,
+    genre: `documentary`,
+    year: 2014
   }
 ];
 

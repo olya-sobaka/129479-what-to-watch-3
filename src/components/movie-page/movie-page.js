@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import MovieCardFull from "../movie-card-full/movie-card-full";
+import PageContent from "../page-content/page-content";
 
 const MoviePage = (props) => {
 
-  const {films} = props;
+  const {films, currentFilm, activeGenre} = props;
 
   return (
     <React.Fragment>
@@ -50,7 +51,15 @@ const MoviePage = (props) => {
         </svg>
       </div>
 
-      <MovieCardFull films={films} />
+      <MovieCardFull films={films} currentFilm={currentFilm}/>
+
+      <PageContent
+        films={films}
+        moreLike={true}
+        activeGenre={activeGenre}
+        onCardClick={() => {}}
+        onGenreClick={() => {}}
+        currentFilm={currentFilm}/>
 
     </React.Fragment>
   );
@@ -64,7 +73,12 @@ MoviePage.propTypes = {
         id: PropTypes.number.isRequired,
         genre: PropTypes.string.isRequired
       })
-  ).isRequired
+  ).isRequired,
+
+  currentFilm: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    genre: PropTypes.string.isRequired
+  })
 };
 
 export default MoviePage;

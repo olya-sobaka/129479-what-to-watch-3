@@ -21,7 +21,7 @@ it(`renders VideoPlayer component when the card is active`, () => {
   const id = 36;
 
   const tree = renderer.create(
-      <SmallMovieCard film={movie} activeCardId={id} />
+      <SmallMovieCard film={movie} activeItem={id} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -30,7 +30,7 @@ it(`renders an image when the card is not active`, () => {
   const id = 4;
 
   const tree = renderer.create(
-      <SmallMovieCard film={movie} activeCardId={id} />
+      <SmallMovieCard film={movie} activeItem={id} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
@@ -39,7 +39,7 @@ it(`renders an image when the card is not active`, () => {
   const id = null;
 
   const tree = renderer.create(
-      <SmallMovieCard film={movie} activeCardId={id} />
+      <SmallMovieCard film={movie} activeItem={id} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

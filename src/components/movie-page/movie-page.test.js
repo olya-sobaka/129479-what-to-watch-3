@@ -18,8 +18,16 @@ const films = [{
 }];
 
 it(`MoviePage should render correctly`, () => {
+
+  const mockFunc = () => {};
+  const currentFilm = {
+    id: 10,
+    genre: `comedy`
+  };
+  const activeTab = `overview`;
+
   const tree = renderer.create(
-      <MoviePage films={films}/>
+      <MoviePage films={films} onTabClick={mockFunc} currentFilm={currentFilm} activeTab={activeTab}/>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
