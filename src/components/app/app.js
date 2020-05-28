@@ -8,7 +8,7 @@ const App = (props) => {
   return (
     <Main
       films={films}
-      genre={genre}
+      activeGenre={genre}
       onGenreClick={onGenreClick}
       onCardClick={onCardClick}
       activeFilmId={activeFilmId}

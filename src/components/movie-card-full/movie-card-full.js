@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import {capitalizeFirstLetter} from "../../utils";
 import Tabs from "../tabs/tabs";
+import withActiveItem from "../../hocs/with-active-card/with-active-item";
+
+const TabsWrapped = withActiveItem(Tabs, `overview`);
 
 const MovieCardFull = (props) => {
 
-  const {films, onTabClick, activeTab} = props;
+  const {films} = props;
 
   let film = films[0];
 
@@ -68,7 +71,7 @@ const MovieCardFull = (props) => {
               height="327"/>
           </div>
 
-          <Tabs onTabClick={onTabClick} activeTab={activeTab} />
+          <TabsWrapped />
 
         </div>
       </div>
@@ -83,11 +86,7 @@ MovieCardFull.propTypes = {
         genre: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired
       })
-  ),
-
-  onTabClick: PropTypes.func.isRequired,
-
-  activeTab: PropTypes.string
+  )
 };
 
 export default MovieCardFull;

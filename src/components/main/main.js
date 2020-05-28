@@ -5,7 +5,7 @@ import PageContent from "../page-content/page-content";
 
 const Main = (props) => {
 
-  const {films, genre, onGenreClick, onCardClick, activeFilmId} = props;
+  const {films, onGenreClick, onCardClick, activeFilmId, activeGenre} = props;
 
   let activeFilm = films[0];
 
@@ -16,12 +16,12 @@ const Main = (props) => {
   });
 
   return (
-    <React.Fragment>
+    <>
       <MovieCard
         activeFilm={activeFilm}
       />
-      <PageContent films={films} genre={genre} onCardClick={onCardClick} onGenreClick={onGenreClick}/>
-    </React.Fragment>
+      <PageContent films={films} onCardClick={onCardClick} onGenreClick={onGenreClick} activeGenre={activeGenre} />
+    </>
   );
 };
 

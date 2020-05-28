@@ -5,24 +5,24 @@ import VideoPlayer from "../video-player/video-player.js";
 
 const SmallMovieCard = (props) => {
 
-  const {onCardHover, film, activeCardId, onCardClick} = props;
+  const {updateActiveItem, film, activeItem, onCardClick} = props;
 
   const {title: filmTitle, id, poster: filmPoster} = film;
 
   return (
     <article
       onMouseEnter={() => {
-        onCardHover(id);
+        updateActiveItem(id);
       }}
       onMouseOut={() => {
-        onCardHover(null);
+        updateActiveItem(null);
       }}
       onClick={() => {
         onCardClick(id);
       }}
       className="small-movie-card catalog__movies-card">
       <div className="small-movie-card__image">
-        {activeCardId === id ? <VideoPlayer film={film} /> : <img src={filmPoster} alt={filmTitle} width="280" height="175" />}
+        {activeItem === id ? <VideoPlayer playOnHover={true} film={film} controls={false} muted={true} /> : <img src={filmPoster} alt={filmTitle} width="280" height="175" />}
       </div>
       <h3
         className="small-movie-card__title">
@@ -42,10 +42,10 @@ SmallMovieCard.propTypes = {
     id: PropTypes.number.isRequired
   }).isRequired,
 
-  onCardHover: PropTypes.func,
+  updateActiveItem: PropTypes.func,
   onCardClick: PropTypes.func,
 
-  activeCardId: PropTypes.number
+  activeItem: PropTypes.number
 };
 
 export default SmallMovieCard;

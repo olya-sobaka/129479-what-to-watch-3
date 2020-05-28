@@ -5,10 +5,10 @@ import Tabs from "./tabs";
 it(`Tabs renders correctly`, () => {
 
   const mockFunc = () => {};
-  const activeTab = `reviews`;
+  const activeItem = `reviews`;
 
   const tree = renderer.create(
-      <Tabs onTabClick={mockFunc} activeTab={activeTab}/>
+      <Tabs updateActiveItem={mockFunc} activeItem={activeItem}/>
   ).toJSON;
   expect(tree).toMatchSnapshot();
 });

@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import MoviesList from "./movies-list.js";
 
-const filmsByGenre = [
+const filmsByAllGenres = [
   {
     title: `Kiki's Delivery Service`,
     poster: `img/midnight-special.jpg`,
@@ -31,7 +31,7 @@ it(`MoviesList renders correctly`, () => {
   const mockFunc = () => {};
 
   const tree = renderer.create(
-      <MoviesList onCardClick={mockFunc} filmsByGenre={filmsByGenre} />
+      <MoviesList onCardClick={mockFunc} filmsByAllGenres={filmsByAllGenres} />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

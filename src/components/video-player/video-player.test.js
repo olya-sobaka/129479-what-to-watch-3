@@ -10,9 +10,16 @@ const movie = {
   previewWebm: `https://coverr.co/videos/morning-sunshine-Of9KYVXN1C`
 };
 
-it(`VideoPlayer renders correctly`, () => {
+it(`VideoPlayer renders correctly inside of a SmallMovieCard`, () => {
   const tree = renderer.create(
-      <VideoPlayer film={movie}/>
+      <VideoPlayer film={movie} controls={false} muted={true} playOnHover={true}/>
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it(`VideoPlayer renders correctly in full screen mode`, () => {
+  const tree = renderer.create(
+    <VideoPlayer film={movie} controls={true} muted={false}/>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

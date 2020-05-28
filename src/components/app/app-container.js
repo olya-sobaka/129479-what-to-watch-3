@@ -13,17 +13,23 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const onCardClickAction = (newFilmId) => {
   return {
-    onGenreClick: (newGenre) => dispatch({
-      type: ActionType.SET_ACTIVE_GENRE,
-      payload: {newGenre}
-    }),
-    onCardClick: (newFilmId) => dispatch({
-      type: ActionType.SET_ACTIVE_FILM,
-      payload: {newFilmId}
-    })
+    type: ActionType.SET_ACTIVE_FILM,
+    payload: {newFilmId}
   };
+};
+
+const onGenreClickAction = (newGenre) => {
+  return {
+    type: ActionType.SET_ACTIVE_GENRE,
+    payload: {newGenre}
+  };
+};
+
+const mapDispatchToProps = {
+  onGenreClick: onGenreClickAction,
+  onCardClick: onCardClickAction,
 };
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);

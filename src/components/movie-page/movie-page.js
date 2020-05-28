@@ -5,7 +5,7 @@ import PageContent from "../page-content/page-content";
 
 const MoviePage = (props) => {
 
-  const {films, onTabClick, activeTab, currentFilm} = props;
+  const {films, currentFilm, activeGenre} = props;
 
   return (
     <React.Fragment>
@@ -51,9 +51,15 @@ const MoviePage = (props) => {
         </svg>
       </div>
 
-      <MovieCardFull films={films} onTabClick={onTabClick} activeTab={activeTab} currentFilm={currentFilm}/>
+      <MovieCardFull films={films} currentFilm={currentFilm}/>
 
-      <PageContent films={films} moreLike={true} onCardClick={() => {}} onGenreClick={() => {}} currentFilm={currentFilm}/>
+      <PageContent
+        films={films}
+        moreLike={true}
+        activeGenre={activeGenre}
+        onCardClick={() => {}}
+        onGenreClick={() => {}}
+        currentFilm={currentFilm}/>
 
     </React.Fragment>
   );
@@ -68,10 +74,6 @@ MoviePage.propTypes = {
         genre: PropTypes.string.isRequired
       })
   ).isRequired,
-
-  onTabClick: PropTypes.func.isRequired,
-
-  activeTab: PropTypes.string,
 
   currentFilm: PropTypes.shape({
     id: PropTypes.number.isRequired,
