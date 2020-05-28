@@ -4,7 +4,7 @@ import {capitalizeFirstLetter} from "../../utils";
 
 const GenresList = (props) => {
 
-  const {films, activeGenre, onGenreClick} = props;
+  const {films, activeGenre, onGenreClick, resetShowMoreClicks} = props;
 
   const activeGenreClassNames = `catalog__genres-item catalog__genres-item--active`;
   const genreClassName = `catalog__genres-item`;
@@ -17,6 +17,7 @@ const GenresList = (props) => {
   distinctGenres.unshift(`all genres`);
 
   const handleGenreClick = (newGenre) => {
+    resetShowMoreClicks();
     onGenreClick(newGenre);
   };
 
@@ -52,7 +53,9 @@ GenresList.propTypes = {
 
   activeGenre: PropTypes.string.isRequired,
 
-  onGenreClick: PropTypes.func.isRequired
+  onGenreClick: PropTypes.func.isRequired,
+
+  resetShowMoreClicks: PropTypes.func.isRequired
 };
 
 export default GenresList;
